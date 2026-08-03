@@ -47,8 +47,15 @@ def get_price(item_name):
         get_price("Tea") -> 3.5
         get_price("Pizza") -> None
     """
-    # TODO: implement this function
-    pass
+    
+    if item_name not in MENU:
+        return "None"
+    else:
+        return MENU[item_name]
+"""
+print(get_price("Coffee"))
+print(get_price("Pizza"))
+"""
 
 
 def calculate_total(order_list):
@@ -60,8 +67,13 @@ def calculate_total(order_list):
     Example:
         calculate_total(["Coffee", "Muffin"]) -> 9.5
     """
-    # TODO: implement this function
-    pass
+    final_price = 0
+    for items in order_list:
+        final_price += get_price(items) 
+    return final_price
+    
+#print(calculate_total(["Coffee", "Tea"]))
+    
 
 
 def display_receipt(order_list, total):
