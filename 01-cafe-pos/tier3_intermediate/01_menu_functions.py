@@ -76,13 +76,27 @@ def calculate_total(order_list):
     
 
 
-def display_receipt(order_list, total):
+def display_receipt(order_list):
     """
     Print a neatly formatted receipt for order_list, followed by the total,
     matching the style shown in the EXAMPLE OUTPUT above.
     """
-    # TODO: implement this function
-    pass
+    # I might be a genious!
+    string = ""
+    space_string = ""
+    for items in order_list:
+            space_string = ""
+            space = 31 - len(items)
+            for i in range(space):
+                 space_string += " "
+            string += f"{items}{space_string} ${get_price(items)}0\n"
+    return f"""
+---------------RECEIPT---------------
+{string}
+----------------TOTAL----------------
+Total                           ${calculate_total(order_list)}0"""
+
+print(display_receipt(["Coffee", "Tea"]))
 
 
 if __name__ == "__main__":
