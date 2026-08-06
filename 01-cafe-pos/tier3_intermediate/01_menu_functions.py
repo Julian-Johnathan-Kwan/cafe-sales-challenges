@@ -94,9 +94,19 @@ def display_receipt(order_list):
 ---------------RECEIPT---------------
 {string}----------------TOTAL----------------
 Total                           ${calculate_total(order_list)}0"""
-print(display_receipt(["Coffee", "Tea", "Muffin"]))
+# print(display_receipt(["Coffee", "Tea", "Muffin"]))
 if __name__ == "__main__":
     order_list = []
+    opinion_of_me = "good"
+    while opinion_of_me == "good":
+        thing = input("what do you want (type die to show result): ")
+        if thing not in MENU:
+            print(display_receipt(order_list))
+            opinion_of_me = "bad"
+        else:
+            order_list.append(thing)
+
+    
 
     # TODO: write a while loop (like in tier2) that asks the customer what
     # they'd like, adds valid items to order_list, and stops when they type
