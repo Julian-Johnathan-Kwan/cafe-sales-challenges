@@ -49,7 +49,7 @@ def get_price(item_name):
     """
     
     if item_name not in MENU:
-        return "None"
+        return None
     else:
         return MENU[item_name]
 """
@@ -92,13 +92,9 @@ def display_receipt(order_list):
             string += f"{items}{space_string} ${get_price(items)}0\n"
     return f"""
 ---------------RECEIPT---------------
-{string}
-----------------TOTAL----------------
+{string}----------------TOTAL----------------
 Total                           ${calculate_total(order_list)}0"""
-
-print(display_receipt(["Coffee", "Tea"]))
-
-
+print(display_receipt(["Coffee", "Tea", "Muffin"]))
 if __name__ == "__main__":
     order_list = []
 
