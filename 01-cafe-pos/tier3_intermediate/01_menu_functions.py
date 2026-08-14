@@ -102,7 +102,7 @@ if __name__ == "__main__":
         thing = input("what do you want (type die to show result): ")
         if thing not in MENU:
             print(display_receipt(order_list))
-            opinion_of_me = "bad"
+            opinion_of_me = "not great"
         else:
             order_list.append(thing)
 
