@@ -61,6 +61,7 @@ class Menu:
     def list_items(self):
         """Return a list of every item name on the menu."""
         # TODO: implement this method
+        return list(self.items.keys())
         
         pass
 
