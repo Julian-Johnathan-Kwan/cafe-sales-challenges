@@ -61,6 +61,10 @@ class Order:
         taking quantities into account (price * quantity for each item).
         """
         # TODO: implement this method
+        tota_price = 0
+        for item_name in self.items:
+            tota_price += menu.get_price(item_name) * self.items[item_name]
+        return round(tota_price, 2)
         pass
 
 
