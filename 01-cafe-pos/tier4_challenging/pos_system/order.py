@@ -64,7 +64,7 @@ class Order:
         tota_price = 0
         for item_name in self.items:
             tota_price += menu.get_price(item_name) * self.items[item_name]
-        return round(tota_price, 2)
+        return tota_price
         pass
 
 
@@ -73,5 +73,6 @@ if __name__ == "__main__":
     order = Order(menu)
     order.add_item("Coffee", 2)
     order.add_item("Muffin", 1)
+    order.add_item("Fortnite Battle Pass", 2)
     print("Order items:", order.items)
     print("Subtotal:", order.get_subtotal())
